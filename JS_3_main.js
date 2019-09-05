@@ -1,5 +1,4 @@
-//JS_3_main.js
-
+'use strict';
 //Import Class
 var importedClass = require('./JS_3_class')
 

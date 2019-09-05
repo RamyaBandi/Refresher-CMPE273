@@ -1,3 +1,4 @@
+'use strict';
 //Input
 let nameList = "John Doe,Jane Doe,Jim Harper,Kelly Kapoor";
 console.log("\nInput String = "+ nameList)
@@ -8,7 +9,7 @@ let splitList=(localVar)=>{
 }
 let splitNameList = splitList(nameList);
 console.log("\nAfter splitting string:")
-for (i in splitNameList){
+for (var i in splitNameList){
     console.log(splitNameList[i])
 }
 
@@ -40,7 +41,7 @@ console.log("\nData types of Variables:")
 displayType(nameList, splitNameList, slicedNameList);
 
 //stringify function
-stringifiedOutput = JSON.stringify(splitNameList);
+var stringifiedOutput = JSON.stringify(splitNameList);
 console.log("\nStringified List = "+stringifiedOutput);
 //parse function
 console.log("\nParsed List:");

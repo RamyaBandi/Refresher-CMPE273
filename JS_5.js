@@ -1,3 +1,5 @@
+'use strict';
+
 //Fetch Blockchain API from blockchain.com
 // This returns the latest Bitcoin block information
 

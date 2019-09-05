@@ -1,3 +1,4 @@
+'use strict';
 //Input Object
 var studentRecords={
     name: "John Doe",
@@ -19,9 +20,9 @@ console.log("\nMaximum Rating obtained = " + maxRating())
 let avgRating = (_studentRating) => {
     var size=_studentRating.length;
     var avg="Average Rating is = ";
-    findAvg = () => {
+    var findAvg = () => {
         var sum=0;
-        for (i in _studentRating) {
+        for (var i in _studentRating) {
             sum+=_studentRating[i];
         }
         return avg + (sum / size);

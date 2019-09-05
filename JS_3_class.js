@@ -1,6 +1,5 @@
+'use strict';
 //JS_3_class.js
-
-
 module.exports = class RegisterValidation {
     
     //Static Function
