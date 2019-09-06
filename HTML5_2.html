@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Geolocator App</title>
+</head>
+
+<body>
+    <h1>Geolocator App</h1>
+    <table align="center">
+        <tr>
+            <td>
+                Click on the button to see your current location on an interactive map.
+            </td>
+        <tr>
+            <td>
+                <button onclick="getLocation()" type="button">Get Location</button>
+            </td>
+        </tr>
+
+        </tr>
+        <tr>
+            <td>
+                <a href="" id="output"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Source:</p>
+                <a href="https://www.latlong.net/">https://www.latlong.net/</a>
+            </td>
+        </tr>
+
+
+    </table>
+    <script>
+        function getLocation() {
+            var x = document.getElementById("output");
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            function showPosition(position) {
+                x.href = "https://www.latlong.net/c/?lat=" + position.coords.latitude + "&long="
+                    + position.coords.longitude;
+                x.innerHTML = "https://www.latlong.net/c/?lat=" + position.coords.latitude + "&long="
+                    + position.coords.longitude;
+            }
+        }
+    </script>
+</body>
+
+</html>
