@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <h2>Registration Form</h2>
+    <table align="center">
+        <tr>
+            <td>First Name</td>
+            <td> <input type="text" name="firstName" id="firstName" maxlength="30" required autofocus
+                    pattern="[A-Za-z]{1,30}" />
+                (Max 30 characters, A-Z and a-z)
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td> <input type="text" name="lastName" id="lastName" maxlength="30" required pattern="[A-Za-z]{1,30}" />
+                (Max 30 characters, A-Z and a-z)
+            </td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td><input type="date" name="bday" id="bday"></td>
+        </tr>
+        <td>Gender</td>
+        <td>Male <input type="radio" name="Gender" id="Gender" value="Male" />
+            Female <input type="radio" name="Gender" id="Gender" value="Female" />
+            Other <input type="radio" name="Gender" id="Gender" value="Other" />
+        </td>
+        <tr>
+            <td>Email Address</td>
+            <td><input type="email" name="emailAddress" id="emailAddress" maxlength="80" required
+                    pattern="[A-Za-z]{,80}"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="phone" id="phone" maxlength="10" pattern="[0-9]{10}">
+                (Max 10 characters, 0-9)
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password" id="password" minlength="8" maxlength="80" required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"">
+                (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan=" 4" align="center">
+                <button onclick="storeData()" type="button">Store Data</button>
+                <button onclick="showData()" type="button">Show Data</button>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <h2>Stored Data</h2>
+    <table>
+        <tr>First Name:
+            <td>
+                <div id="displayFirstName"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:
+                <div id="displayLastName"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Birthday:
+                <div id="displayBirthday"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender:
+                <div id="displayGender"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email:
+                <div id="displayEmail"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phone:
+                <div id="displayPhone"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Password:
+                <div id="displayPassword"></div>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        function storeData() {
+            localStorage.firstName = document.getElementById("firstName").value;
+            localStorage.lastName = document.getElementById("lastName").value;
+            localStorage.bday = document.getElementById("bday").value;
+            localStorage.gender = document.getElementById("Gender").value;
+            localStorage.emailAddress = document.getElementById("emailAddress").value;
+            localStorage.phone = document.getElementById("phone").value;
+            localStorage.password = document.getElementById("password").value;
+        }
+        function showData() {
+            document.getElementById("displayFirstName").innerHTML = localStorage.firstName;
+            document.getElementById("displayLastName").innerHTML = localStorage.lastName;
+            document.getElementById("displayBirthday").innerHTML = localStorage.bday;
+            document.getElementById("displayGender").innerHTML = localStorage.gender;
+            document.getElementById("displayEmail").innerHTML = localStorage.emailAddress;
+            document.getElementById("displayPhone").innerHTML = localStorage.phone;
+            document.getElementById("displayPassword").innerHTML = localStorage.password;
+        }
+    </script>
+</body>
+
+</html>
